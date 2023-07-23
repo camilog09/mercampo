@@ -1,0 +1,95 @@
+.Nav {
+  display: flex;
+  padding: 0 24px;
+  border-bottom: 1px solid #eeeeee;
+  position: fixed;
+  top: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 1;
+  min-height: 60px;
+}
+.nav-logo {
+  width: 180px;
+}
+.logo {
+  width: 180px;
+}
+.nav-search {
+  border-radius: 99px;
+  background-color: rgba(238, 229, 233, 0.6);
+  width: 60%;
+  flex-shrink: 0;
+  border: none;
+  padding: 12px;
+}
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+.nav-search:focus-visible {
+  outline: none;
+}
+.navbar-left ul,
+.navbar-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+.navbar-left ul {
+  margin-left: 12px;
+}
+.navbar-left ul li a,
+.navbar-right ul li a {
+  text-decoration: none;
+  color: #111;
+  border: 1px solid #fff;
+  padding: 8px;
+  border-radius: 8px;
+}
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+  border: 1px solid #111;
+  color: #111;
+}
+.navbar-email {
+  color: #111;
+  font-size: 16px;
+  margin-right: 12px;
+}
+.navbar-shopping-cart {
+  position: relative;
+}
+.navbar-shopping-cart div {
+  width: 16px;
+  height: 16px;
+  background-color: #111;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: -6px;
+  right: -3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .menu {
+    display: block;
+    margin: auto 0;
+  }
+  .navbar-left ul {
+    display: none;
+  }
+  .navbar-email {
+    display: none;
+  }
+}
