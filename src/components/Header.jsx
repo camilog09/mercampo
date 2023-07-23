@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../styles/Header.module.css";
 import { Link } from "react-router-dom";
 import AppContext from "../context/AppContext";
@@ -10,10 +10,33 @@ import menu from "../assets/icons/menu.svg";
 
 const Header = () => {
   const { state, toggleOrder, toggleMenu } = useContext(AppContext);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    // Función para manejar el evento de scroll
+    const handleScroll = () => {
+      // Obtener la posición del scroll vertical
+      const scrollY = window.scrollY;
+      
+      // Determinar si se ha hecho scroll más allá de cierto punto (por ejemplo, 100px)
+      const shouldAddClass = scrollY > 100;
+
+      // Actualizar el estado para indicar si se debe agregar o quitar la clase
+      setIsScrolled(shouldAddClass);
+    };
+
+    // Agregar el evento de scroll al componente
+    window.addEventListener('scroll', handleScroll);
+
+    // Limpiar el evento de scroll al desmontar el componente
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <nav className={styles.Nav}>
+      <nav className={`${styles.Nav} ${isScrolled ? styles.Scrolled : ''}`}>
         <div className={styles["navbar-left"]}>
           <img src={menu} alt="menu" className={styles.menu} />
           <Link href="/">
@@ -26,6 +49,17 @@ const Header = () => {
           />
           <ul>
             <li
+              className={styles.pointer}
+              onClick={() => toggleOrder()}
+              aria-hidden="true"
+            >
+              <img
+                className={styles.pointer}
+                src={userCircle}
+                alt="user profile"
+              />
+            </li>
+            <li
               className={styles["navbar-shopping-cart"]}
               onClick={() => toggleOrder()}
               aria-hidden="true"
@@ -37,25 +71,7 @@ const Header = () => {
               />
               {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
             </li>
-            <li
-              className={styles.pointer}
-              onClick={() => toggleOrder()}
-              aria-hidden="true"
-            >
-              <img
-                className={(styles.pointer)}
-                src={userCircle}
-                alt="shopping cart"
-              />
-              {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
-            </li>
           </ul>
-        </div>
-        <div className={styles["navbar-center"]}>
-          
-        </div>
-        <div className={styles["navbar-right"]}>
-          
         </div>
       </nav>
       {/* <nav className={styles.Nav}>

@@ -1,0 +1,44 @@
+.Banner {
+    text-align: left;
+    background-image: url("https://www.semana.com/resizer/O5YH-rxte52z0hm9QWDl1LgNus8=/1920x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/QF4EOTLBGZBIZAX3MUM4ZJ3HWQ.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));;
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    padding: 24px;
+    border-radius: 24px;
+    color: #fff;
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.content-banner{
+    text-align: center;
+}
+
+/* .content-banner h1 {
+    text-transform: uppercase;
+} */
+
+.cta-banner {
+    text-align: center;
+}
+
+.main-button {
+    border-radius: 99px;
+    background-color: var(--main-orange);
+    color: #fff;
+    border: none;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.main-button:hover {
+    color: var(--main-orange);
+    background-color: #fff;
+}

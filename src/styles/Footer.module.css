@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: relative;
   width: 100%;
   bottom: 0;
 }
@@ -38,6 +38,11 @@
   margin: 0 12px;
 }
 
+.nav-column-footer h4 {
+  color: #fff;
+  font-weight: 700;
+}
+
 .nav-column-footer ul{
   list-style: none;
   padding: 0px;
@@ -47,4 +52,20 @@
   text-decoration: none;
   color: #fff;
   border-radius: 8px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (max-width: 640px) {
+  .nav-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-column-footer li {
+    font-weight: 400 !important;
+  }
+  .Footer {
+    padding: 2rem 0;
+  }
 }

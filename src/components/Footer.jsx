@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import styles from "../styles/Footer.module.css";
 import { Link } from "react-router-dom";
-import AppContext from "../context/AppContext";
 
 import facebook from "../assets/icons/FacebookLogo.svg";
 import instagram from "../assets/icons/InstagramLogo.svg";
@@ -9,8 +8,6 @@ import twitter from "../assets/icons/twitter.svg";
 import logoBlanco from "../assets/logoMercampoBlancoNegativo.svg";
 
 const Footer = () => {
-  const { state, toggleOrder, toggleMenu } = useContext(AppContext);
-
   return (
     <>
       <div className={styles.Footer}>

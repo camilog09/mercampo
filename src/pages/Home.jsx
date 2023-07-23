@@ -1,14 +1,17 @@
 import React from "react";
-import styles from "../styles/Home.module.css"
+import styles from "../styles/Home.module.css";
+import ProductItem from "../components/ProductItem";
+import ProductList from "../containers/ProductList"
+import Banner from "../components/Banner";
 
 export function Home() {
-  return (
+
+   return (
     <>
       <div className={styles.Contain}>
-        <div className={styles.Banner}>
-          <h1>Los mejores productos del Campo</h1>
-          <button className={styles["main-button"]}>Comprar ahora</button>
-        </div>
+        <Banner/>
+        <h2>La mejor selección del campo para tu mesa</h2>
+        <ProductList/>
       </div>
     </>
   );
