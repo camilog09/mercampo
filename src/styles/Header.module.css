@@ -1,34 +1,96 @@
 .Nav {
   display: flex;
-  padding: 0 24px;
+  justify-content: center;
   border-bottom: 1px solid #eeeeee;
-  position: fixed;
-  top: 0;
-  background: #fff;
-  width: 100%;
-  z-index: 1;
-  min-height: 60px;
+  min-height: 70px;
+  z-index: 100;
+  align-items: center;
+  padding: 0 2rem;
 }
 .nav-logo {
   width: 180px;
+  margin: 0 8px;
 }
-.logo {
+.nav-search {
+  border-radius: 99px;
+  background-color: var(--bg-beige60);
+  width: 780px;
+  border: none;
+  padding: 12px;
+  margin: 0 8px;
+}
+
+.nav-search:focus-visible {
+  outline: none;
+}
+
+.navbar-right, .navbar-left, .navbar.center {
+  align-items: center;
+  display: flex;
+}
+
+.navbar-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 2px;
+  display: flex;
+  align-items: center;
+}
+.navbar-shopping-cart {
+  position: relative;
+}
+.navbar-shopping-cart div {
+  width: 16px;
+  height: 16px;
+  background-color: #111;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: -6px;
+  right: -3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .Nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eeeeee;
+  z-index: 100;
+  width: calc(100%);
+  min-height: 60px;
+  background-color: beige;
+}
+.nav-logo {
   width: 180px;
 }
 .nav-search {
   border-radius: 99px;
   background-color: rgba(238, 229, 233, 0.6);
-  width: 60%;
-  flex-shrink: 0;
+  width: 100%;
   border: none;
   padding: 12px;
+}
+.nav-search:focus-visible {
+  outline: none;
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  justify-content: space-between;
+  margin: 0 12px 0 12px;
 }
 .navbar-center {
   display: flex;
   align-items: center;
+  width: 50%;
 }
-.nav-search:focus-visible {
-  outline: none;
+.navbar-right {
+  display: flex;
+  align-items: center;
+  width: 20%;
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -37,16 +99,7 @@
   margin: 0;
   display: flex;
   align-items: center;
-  height: 60px;
 }
-.navbar-left {
-  display: flex;
-  align-items: center;
-}
-.navbar-left ul {
-  margin-left: 12px;
-}
-.navbar-left ul li a,
 .navbar-right ul li a {
   text-decoration: none;
   color: #111;
@@ -54,16 +107,11 @@
   padding: 8px;
   border-radius: 8px;
 }
-.navbar-left ul li a:hover,
 .navbar-right ul li a:hover {
   border: 1px solid #111;
   color: #111;
 }
-.navbar-email {
-  color: #111;
-  font-size: 16px;
-  margin-right: 12px;
-}
+
 .navbar-shopping-cart {
   position: relative;
 }
@@ -92,4 +140,4 @@
   .navbar-email {
     display: none;
   }
-}
+} */

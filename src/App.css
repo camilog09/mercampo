@@ -1,0 +1,12 @@
+:root {
+  --main-green: #2D5953;
+  --main-orange: #F4743B;
+  --light-green: #8FB996;
+  --main-beige: #EEE5E9;
+  --main-brown: #462521;
+  --bg-beige60: rgba(238, 229, 233, 0.60);
+}
+
+body {
+  margin: 0;
+}

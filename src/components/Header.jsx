@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import styles from "../styles/Header.module.css";
 import { Link } from "react-router-dom";
-import Menu from "./Menu";
 import AppContext from "../context/AppContext";
 
 import logo from "../assets/logomercampo.svg";
 import shoppingCart from "../assets/icons/shopping-cart.svg";
+import userCircle from "../assets/icons/userCircle.svg";
 import menu from "../assets/icons/menu.svg";
 
 const Header = () => {
@@ -19,15 +19,11 @@ const Header = () => {
           <Link href="/">
             <img src={logo} alt="logo" className={styles["nav-logo"]} />
           </Link>
-        </div>
-        <div className={styles["navbar-center"]}>
           <input
             type="text"
             placeholder="Buscar..."
             className={styles["nav-search"]}
           />
-        </div>
-        <div className={styles["navbar-right"]}>
           <ul>
             <li
               className={styles["navbar-shopping-cart"]}
@@ -41,7 +37,25 @@ const Header = () => {
               />
               {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
             </li>
+            <li
+              className={styles.pointer}
+              onClick={() => toggleOrder()}
+              aria-hidden="true"
+            >
+              <img
+                className={(styles.pointer)}
+                src={userCircle}
+                alt="shopping cart"
+              />
+              {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
+            </li>
           </ul>
+        </div>
+        <div className={styles["navbar-center"]}>
+          
+        </div>
+        <div className={styles["navbar-right"]}>
+          
         </div>
       </nav>
       {/* <nav className={styles.Nav}>

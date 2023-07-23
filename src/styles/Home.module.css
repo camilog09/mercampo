@@ -1,0 +1,14 @@
+.Banner {
+    text-align: left;
+    background-image: url(https://media.istockphoto.com/id/1319254570/es/foto/una-agricultora-ense%C3%B1ando-a-su-hijo-sobre-la-cosecha-de-la-tierra.jpg?s=612x612&w=0&k=20&c=dZr4iOu3Td7EwI_U8Y8vd2sly_mSkjT0g5S2y2TYOD0=);
+}
+
+.main-button {
+    border-radius: 99px;
+    background-color: var(--main-green);
+    color: #fff;
+    border: none;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 700;
+}
