@@ -17,7 +17,7 @@ const Header = () => {
     const handleScroll = () => {
       // Obtener la posición del scroll vertical
       const scrollY = window.scrollY;
-      
+
       // Determinar si se ha hecho scroll más allá de cierto punto (por ejemplo, 100px)
       const shouldAddClass = scrollY > 100;
 
@@ -26,52 +26,42 @@ const Header = () => {
     };
 
     // Agregar el evento de scroll al componente
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Limpiar el evento de scroll al desmontar el componente
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <>
-      <nav className={`${styles.Nav} ${isScrolled ? styles.Scrolled : ''}`}>
+      <nav className={`${styles.Nav} ${isScrolled ? styles.Scrolled : ""}`}>
         <div className={styles["navbar-left"]}>
           <img src={menu} alt="menu" className={styles.menu} />
-          <Link href="/">
+          <a href="/">
             <img src={logo} alt="logo" className={styles["nav-logo"]} />
-          </Link>
+          </a>
           <input
             type="text"
             placeholder="Buscar..."
             className={styles["nav-search"]}
           />
-          <ul>
-            <li
+
+          <a href="/login">
+            <img
               className={styles.pointer}
-              onClick={() => toggleOrder()}
-              aria-hidden="true"
-            >
-              <img
-                className={styles.pointer}
-                src={userCircle}
-                alt="user profile"
-              />
-            </li>
-            <li
-              className={styles["navbar-shopping-cart"]}
-              onClick={() => toggleOrder()}
-              aria-hidden="true"
-            >
-              <img
-                className={(styles["more-clickable-area"], styles.pointer)}
-                src={shoppingCart}
-                alt="shopping cart"
-              />
-              {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
-            </li>
-          </ul>
+              src={userCircle}
+              alt="user profile"
+            />
+          </a>
+
+          <img
+            className={(styles["more-clickable-area"], styles.pointer)}
+            src={shoppingCart}
+            alt="shopping cart"
+          />
+          {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
         </div>
       </nav>
       {/* <nav className={styles.Nav}>
