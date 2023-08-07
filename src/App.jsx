@@ -6,6 +6,7 @@ import Layout from "./containers/Layout";
 import AppContext from "./context/AppContext";
 import useInitialState from "./hooks/useInitialState";
 import { AuthContextProvider } from "./context/AuthContext";
+import { ProductContextProvider } from "./context/ProductContext"
 
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
@@ -18,8 +19,10 @@ function App() {
 
   return (
     <AppContext.Provider value={initialState}>
+      
       <BrowserRouter>
         {/* <AuthContextProvider> */}
+        <ProductContextProvider>
           <Layout>
             <Routes>
               <Route exact path="/" element={<Home />} />
@@ -27,6 +30,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
+          </ProductContextProvider>
         {/* </AuthContextProvider> */}
       </BrowserRouter>
     </AppContext.Provider>
