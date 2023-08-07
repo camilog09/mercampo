@@ -19,7 +19,7 @@ function App() {
   return (
     <AppContext.Provider value={initialState}>
       <BrowserRouter>
-        <AuthContextProvider>
+        {/* <AuthContextProvider> */}
           <Layout>
             <Routes>
               <Route exact path="/" element={<Home />} />
@@ -27,7 +27,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
-        </AuthContextProvider>
+        {/* </AuthContextProvider> */}
       </BrowserRouter>
     </AppContext.Provider>
   );

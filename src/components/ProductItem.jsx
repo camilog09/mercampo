@@ -16,17 +16,19 @@ const ProductItem = ({ product }) => {
   return (
     <div className={styles.ProductItem}>
       <img
-        src={product?.images[0]}
+        src={product?.main_image_url}
         width={240}
         height={240}
-        alt={product?.title}
+        alt={product?.name}
       />
       <div className={styles["product-info"]}>
         <div>
-          <p>${product.price}</p>
-          <p>{product.title}</p>
+          <p>{product.name}</p>
+          <p>{product.unit_measure} {product.unit_type}</p>
+          <p>${product.unit_price}</p>
+          <p>{product.unit_type} a ${product.pum}</p>
         </div>
-        <figure
+        {/* <figure
           className={styles["more-clickable-area"]}
           onClick={() => handleClick(product)}
           aria-hidden="true"
@@ -44,7 +46,7 @@ const ProductItem = ({ product }) => {
               alt="add to cart"
             />
           )}
-        </figure>
+        </figure> */}
       </div>
     </div>
   );
