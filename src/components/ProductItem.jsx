@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styles from "../styles/ProductItem.module.css";
 import AppContext from "../context/AppContext";
+import pluralize from "pluralize";
 
 import addToCartImage from "../assets/icons/Plus.svg"
 
@@ -12,6 +13,24 @@ const ProductItem = ({ product }) => {
     console.log("in cart: ", state.cart.includes(item));
     addToCart(item);
   };
+
+  function formatCurrency(value) {
+    // Supongamos que 'value' es un número, si no, debes convertirlo a número antes de usar toLocaleString()
+    return value.toLocaleString('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      maximumFractionDigits: 0,
+    });
+  }
+
+  function formatCurrencyDetailed(value) {
+    // Supongamos que 'value' es un número, si no, debes convertirlo a número antes de usar toLocaleString()
+    return value.toLocaleString('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      maximumFractionDigits: 2,
+    });
+  }
 
   return (
     <div className={styles.ProductItem}>
@@ -25,8 +44,8 @@ const ProductItem = ({ product }) => {
         <div>
           <p>{product.name}</p>
           <p>{product.unit_measure} {product.unit_type}</p>
-          <p>${product.unit_price}</p>
-          <p>{product.unit_type} a ${product.pum}</p>
+          <p>{formatCurrency(product.unit_price)}</p>
+          <p>{`${pluralize.singular(product.unit_type)} a ${formatCurrencyDetailed(product.pum)}`}</p>
         </div>
         {/* <figure
           className={styles["more-clickable-area"]}
