@@ -47,7 +47,7 @@ const ProductItem = ({ product }) => {
           <p>{formatCurrency(product.unit_price)}</p>
           <p>{`${pluralize.singular(product.unit_type)} a ${formatCurrencyDetailed(product.pum)}`}</p>
         </div>
-        {/* <figure
+        <figure
           className={styles["more-clickable-area"]}
           onClick={() => handleClick(product)}
           aria-hidden="true"
@@ -65,7 +65,7 @@ const ProductItem = ({ product }) => {
               alt="add to cart"
             />
           )}
-        </figure> */}
+        </figure>
       </div>
     </div>
   );

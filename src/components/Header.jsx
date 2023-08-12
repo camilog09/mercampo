@@ -7,10 +7,21 @@ import logo from "../assets/logomercampo.svg";
 import shoppingCart from "../assets/icons/shopping-cart.svg";
 import userCircle from "../assets/icons/userCircle.svg";
 import menu from "../assets/icons/menu.svg";
+import MyOrder from "../containers/MyOrder";
+import Navbar from "../containers/Navbar";
 
 const Header = () => {
   const { state, toggleOrder, toggleMenu } = useContext(AppContext);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCartOpen, setCartOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const handleCartIconClick = () => {
+    setCartOpen(!isCartOpen);
+  };
+  const handleNavToggle = () => {
+    setIsNavOpen(!isNavOpen);
+  };
 
   useEffect(() => {
     // Función para manejar el evento de scroll
@@ -38,7 +49,13 @@ const Header = () => {
     <>
       <nav className={`${styles.Nav} ${isScrolled ? styles.Scrolled : ""}`}>
         <div className={styles["navbar-left"]}>
-          <img src={menu} alt="menu" className={styles.menu} />
+          <img
+            src={menu}
+            onClick={handleNavToggle}
+            alt="menu"
+            className={styles.menu}
+          />
+          {isNavOpen && <Navbar />}
           <a href="/">
             <img src={logo} alt="logo" className={styles["nav-logo"]} />
           </a>
@@ -59,8 +76,11 @@ const Header = () => {
           <img
             className={(styles["more-clickable-area"], styles.pointer)}
             src={shoppingCart}
+            onClick={handleCartIconClick}
             alt="shopping cart"
           />
+          {/* Renderizar el <aside> del carrito solo si isCartOpen es true */}
+          {isCartOpen && <MyOrder />}
           {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
         </div>
       </nav>

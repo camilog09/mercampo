@@ -1,0 +1,15 @@
+.dashboard {
+  display: flex;
+  flex-direction: row;
+}
+.left-column {
+    text-align: left;
+    width: 33%;
+    padding: 24px;
+}
+.right-column {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

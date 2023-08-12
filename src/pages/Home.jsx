@@ -13,7 +13,6 @@ export function Home() {
         <Banner/>
         <h2>La mejor selección del campo para tu mesa</h2>
         <ProductList/>
-        <ProductForm/>
       </div>
     </>
   );
